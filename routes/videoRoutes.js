@@ -9,3 +9,5 @@ const upload = multer({ dest: 'uploads/' });
 router.put('/videos', upload.single('video'), videoController.uploadVideo);
 
 module.exports = router;
+
+
