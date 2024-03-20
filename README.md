@@ -14,7 +14,7 @@ Follow these instructions to get the project up and running on your local machin
 Prerequisites
 [List any prerequisites here, e.g., Node.js, MongoDB]
 Installation
-Clone the repository: git clone https://github.com/your_username/your_project.git
+Clone the repository: git clone (https://github.com/engineerFayyaz/nodejs-mssql-cloudinary-api.git)
 Install dependencies: npm install
 Configure environment variables (if necessary).
 Start the server: npm start
