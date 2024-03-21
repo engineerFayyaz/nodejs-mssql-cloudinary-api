@@ -74,4 +74,22 @@ exports.loginUser = async (req, res) => {
     }
 };
 
+exports.getAllUsers = async (req, res) => {
+    try {
+        // Create a new connection pool
+        const pool = new ConnectionPool(dbConfig);
+        await pool.connect();
 
+        // Retrieve all users from the database
+        const result = await pool.query`SELECT * FROM Users`;
+
+        // Close the connection pool
+        pool.close();
+
+        // Return the list of users
+        return res.status(200).json(result.recordset);
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ message: 'Internal server error' });
+    }
+};

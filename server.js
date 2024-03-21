@@ -1,7 +1,7 @@
 // server.js
 const express = require('express');
 const { createTables } = require('./database');
-const { registerUser, loginUser } = require('./controllers/authController');
+const { registerUser, loginUser, getAllUsers } = require('./controllers/authController');
 const videoRoutes = require('./routes/videoRoutes');
 const imageRoutes = require('./routes/imageRoutes');
 const checkRoute = require('./routes/checkRoute'); // Import the checkRoute module
@@ -25,6 +25,8 @@ createTables().then(() => {
     app.use('/api/images', imageRoutes);
 
     app.use('/api/check', checkRoute);
+
+    app.use('/api/users', getAllUsers);
 
     // Start the server
     app.listen(port, () => {
